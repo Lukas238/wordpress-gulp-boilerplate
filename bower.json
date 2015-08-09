@@ -1,0 +1,28 @@
+{
+  "name": "leandro-garcia",
+  "version": "1.0.0",
+  "authors": [
+    "Lucas Dasso <dasso.lucas@c238.com.ar>"
+  ],
+  "moduleType": [
+    "node"
+  ],
+  "devDependencies": {
+    "bootstrap-sass": "~3.3.5"
+  },
+  "license": "ISC",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/vendors",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "slick.js": "~1.5.8",
+    "html5shiv": "~3.7.2",
+    "bootstrap-select": "~1.7.3",
+    "jquery": "1.11.3"
+  }
+}

@@ -1,0 +1,6 @@
+.sass-cache
+node_modules
+dev
+src/vendors
+components/*
+!components/*.html
