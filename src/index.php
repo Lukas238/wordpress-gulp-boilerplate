@@ -8,7 +8,11 @@
  * E.g., it puts together the home page when no home.php file exists.
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
+<<<<<<< HEAD
  * @package wgb
+=======
+ * @package lgarcia
+>>>>>>> 01876ebd690558b630978e71444aea97583c6119
  */
 
 get_header(); ?>

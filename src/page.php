@@ -7,7 +7,11 @@
  * and that other 'pages' on your WordPress site will use a
  * different template.
  *
+<<<<<<< HEAD
  * @package wgb
+=======
+ * @package lgarcia
+>>>>>>> 01876ebd690558b630978e71444aea97583c6119
  */
 
 get_header(); ?>

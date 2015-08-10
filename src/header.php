@@ -4,7 +4,11 @@
  *
  * Displays all of the <head> section and everything up till <div id="content">
  *
+<<<<<<< HEAD
  * @package wgb
+=======
+ * @package lgarcia
+>>>>>>> 01876ebd690558b630978e71444aea97583c6119
  */
 
 ?><!DOCTYPE html>
@@ -39,7 +43,11 @@
 
 					
 					<nav id="site-navigation" class="main-navigation" role="navigation">
+<<<<<<< HEAD
 						<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'wgb' ); ?></button>
+=======
+						<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'lgarcia' ); ?></button>
+>>>>>>> 01876ebd690558b630978e71444aea97583c6119
 						<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 					</nav><!-- #site-navigation -->
 

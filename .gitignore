@@ -1,6 +1,10 @@
 .sass-cache
 node_modules
+<<<<<<< HEAD
 dev/*
+=======
+dev
+>>>>>>> 01876ebd690558b630978e71444aea97583c6119
 src/vendors
 components/*
 !components/*.html

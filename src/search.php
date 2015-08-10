@@ -2,7 +2,11 @@
 /**
  * The template for displaying search results pages.
  *
+<<<<<<< HEAD
  * @package wgb
+=======
+ * @package lgarcia
+>>>>>>> 01876ebd690558b630978e71444aea97583c6119
  */
 
 get_header(); ?>
@@ -14,7 +18,11 @@ get_header(); ?>
 					<?php if ( have_posts() ) : ?>
 
 						<header class="page-header">
+<<<<<<< HEAD
 							<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'wgb' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+=======
+							<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'lgarcia' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+>>>>>>> 01876ebd690558b630978e71444aea97583c6119
 						</header><!-- .page-header -->
 
 						<?php /* Start the Loop */ ?>

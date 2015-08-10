@@ -2,7 +2,11 @@
 /**
  * The template for displaying all single posts.
  *
+<<<<<<< HEAD
  * @package wgb
+=======
+ * @package lgarcia
+>>>>>>> 01876ebd690558b630978e71444aea97583c6119
  */
 
 get_header(); ?>

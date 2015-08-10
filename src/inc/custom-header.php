@@ -11,23 +11,37 @@
 	</a>
 	<?php endif; // End header image check. ?>
  *
+<<<<<<< HEAD
  * @package wgb
+=======
+ * @package lgarcia
+>>>>>>> 01876ebd690558b630978e71444aea97583c6119
  */
 
 /**
  * Set up the WordPress core custom header feature.
  *
+<<<<<<< HEAD
  * @uses wgb_header_style()
  * @uses wgb_admin_header_style()
  * @uses wgb_admin_header_image()
  */
 function wgb_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'wgb_custom_header_args', array(
+=======
+ * @uses lgarcia_header_style()
+ * @uses lgarcia_admin_header_style()
+ * @uses lgarcia_admin_header_image()
+ */
+function lgarcia_custom_header_setup() {
+	add_theme_support( 'custom-header', apply_filters( 'lgarcia_custom_header_args', array(
+>>>>>>> 01876ebd690558b630978e71444aea97583c6119
 		'default-image'          => '',
 		'default-text-color'     => '000000',
 		'width'                  => 1000,
 		'height'                 => 250,
 		'flex-height'            => true,
+<<<<<<< HEAD
 		'wp-head-callback'       => 'wgb_header_style',
 		'admin-head-callback'    => 'wgb_admin_header_style',
 		'admin-preview-callback' => 'wgb_admin_header_image',
@@ -42,6 +56,22 @@ if ( ! function_exists( 'wgb_header_style' ) ) :
  * @see wgb_custom_header_setup().
  */
 function wgb_header_style() {
+=======
+		'wp-head-callback'       => 'lgarcia_header_style',
+		'admin-head-callback'    => 'lgarcia_admin_header_style',
+		'admin-preview-callback' => 'lgarcia_admin_header_image',
+	) ) );
+}
+add_action( 'after_setup_theme', 'lgarcia_custom_header_setup' );
+
+if ( ! function_exists( 'lgarcia_header_style' ) ) :
+/**
+ * Styles the header image and text displayed on the blog
+ *
+ * @see lgarcia_custom_header_setup().
+ */
+function lgarcia_header_style() {
+>>>>>>> 01876ebd690558b630978e71444aea97583c6119
 	$header_text_color = get_header_textcolor();
 
 	// If no custom options for text are set, let's bail
@@ -74,6 +104,7 @@ function wgb_header_style() {
 	</style>
 	<?php
 }
+<<<<<<< HEAD
 endif; // wgb_header_style
 
 if ( ! function_exists( 'wgb_admin_header_style' ) ) :
@@ -83,6 +114,17 @@ if ( ! function_exists( 'wgb_admin_header_style' ) ) :
  * @see wgb_custom_header_setup().
  */
 function wgb_admin_header_style() {
+=======
+endif; // lgarcia_header_style
+
+if ( ! function_exists( 'lgarcia_admin_header_style' ) ) :
+/**
+ * Styles the header image displayed on the Appearance > Header admin panel.
+ *
+ * @see lgarcia_custom_header_setup().
+ */
+function lgarcia_admin_header_style() {
+>>>>>>> 01876ebd690558b630978e71444aea97583c6119
 ?>
 	<style type="text/css">
 		.appearance_page_custom-header #headimg {
@@ -102,6 +144,7 @@ function wgb_admin_header_style() {
 	</style>
 <?php
 }
+<<<<<<< HEAD
 endif; // wgb_admin_header_style
 
 if ( ! function_exists( 'wgb_admin_header_image' ) ) :
@@ -111,6 +154,17 @@ if ( ! function_exists( 'wgb_admin_header_image' ) ) :
  * @see wgb_custom_header_setup().
  */
 function wgb_admin_header_image() {
+=======
+endif; // lgarcia_admin_header_style
+
+if ( ! function_exists( 'lgarcia_admin_header_image' ) ) :
+/**
+ * Custom header image markup displayed on the Appearance > Header admin panel.
+ *
+ * @see lgarcia_custom_header_setup().
+ */
+function lgarcia_admin_header_image() {
+>>>>>>> 01876ebd690558b630978e71444aea97583c6119
 ?>
 	<div id="headimg">
 		<h1 class="displaying-header-text">
@@ -123,4 +177,8 @@ function wgb_admin_header_image() {
 	</div>
 <?php
 }
+<<<<<<< HEAD
 endif; // wgb_admin_header_image
+=======
+endif; // lgarcia_admin_header_image
+>>>>>>> 01876ebd690558b630978e71444aea97583c6119
