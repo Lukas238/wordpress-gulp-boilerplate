@@ -1,0 +1,47 @@
+{
+  "name": "html5-boilerplate-compass",
+  "title": "Boilerplate for web site with gulp and gulp-compass.",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Lukas238/html5-boilerplate-compass.git"
+  },
+  "author": "Lucas Dasso <dasso.lucas@c238.com.ar>",
+  "keywords": [
+    "c238",
+	"compass",
+	"scss",
+	"gulp",
+	"boilerplate"
+	],
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "bower": "^1.4.1",
+    "browser-sync": "^2.8.2",
+    "del": "^1.2.0",
+    "fs": "^0.0.2",
+    "glob": "^5.0.10",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^1.0.1",
+    "gulp-changed": "^1.2.1",
+    "gulp-compass": "^2.1.0",
+    "gulp-concat": "^2.5.2",
+    "gulp-imagemin": "^2.3.0",
+    "gulp-jshint": "^1.11.1",
+    "gulp-minify-css": "^0.3.13",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^1.3.3",
+    "gulp-uglify": "^1.2.0",
+    "gulp-util": "^3.0.5",
+    "jshint-stylish": "^2.0.1",
+    "merge-stream": "^0.1.7",
+    "path": "^0.11.14",
+    "run-sequence": "^1.1.2"
+  }
+}
