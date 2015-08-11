@@ -1,0 +1,241 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Wordpress-gulp-boilerplate by Lukas238</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Wordpress-gulp-boilerplate</h1>
+        <p>Boilerplate for Wordpress theme web project</p>
+
+        <p class="view"><a href="https://github.com/Lukas238/wordpress-gulp-boilerplate">View the Project on GitHub <small>Lukas238/wordpress-gulp-boilerplate</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/Lukas238/wordpress-gulp-boilerplate/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/Lukas238/wordpress-gulp-boilerplate/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/Lukas238/wordpress-gulp-boilerplate">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="wordpress-gulp-boilerplate" class="anchor" href="#wordpress-gulp-boilerplate" aria-hidden="true"><span class="octicon octicon-link"></span></a>wordpress-gulp-boilerplate</h1>
+
+<p>The aim of this boilerplate, is to facilitate the development of templates for Wordpress, automating common tasks frontend development, use an atomic pattern design in HTML components, maintenance of plugins using Bower, dynamic testing changes by BrowserSync, Build tasks, and intelligent management of boilerplate files using Git.</p>
+
+<p>Some of the highlights:</p>
+
+<ul>
+<li>Granulation of the stylesheet. </li>
+<li>Compilation SCSS styles, and use of mixins of Bootstrap3 in SASS. </li>
+<li>Automatic error checking JS scripts. </li>
+<li>Automatic image compression. </li>
+<li>Task for development and testing of:
+
+<ul>
+<li>Individual components.</li>
+<li>Page templates already integrated into Wordpress.</li>
+</ul>
+</li>
+<li>Task to generate the build.</li>
+</ul>
+
+<h2>
+<a id="technical-characteristics" class="anchor" href="#technical-characteristics" aria-hidden="true"><span class="octicon octicon-link"></span></a>Technical characteristics</h2>
+
+<ul>
+<li>SCSS style sheets.</li>
+<li>Bootstrap3 Styles.</li>
+<li>Bootstrap3 official SASS (think mixins!).</li>
+</ul>
+
+<h3>
+<a id="vendors-plugins-included" class="anchor" href="#vendors-plugins-included" aria-hidden="true"><span class="octicon octicon-link"></span></a>Vendors plugins included:</h3>
+
+<ul>
+<li>
+<a href="http://getbootstrap.com/">Bootstrap-3</a>: CSS &amp; <a href="http://getbootstrap.com/components/">JS components</a>.</li>
+<li>
+<a href="http://www.cheatography.com/lukas238/cheat-sheets/bootstrap3-sass-mixins/">Bootstrap-3-SASS</a>: Mixins.</li>
+<li>jQuery 1.11.3: a jQuery version compatible with older browsers (<em>I'm talking to you, IE8</em>).</li>
+<li>html5shiv: Add HTML5 tags compatibility to IE8+.</li>
+<li>
+<a href="http://silviomoreto.github.io/bootstrap-select/">bootstrap-select</a>: a jQuery plugin that replace the &lt;select&gt; tag with a bootstrap3 dropdown.</li>
+<li>
+<a href="http://kenwheeler.github.io/slick/">Slick-slider</a>: a responsibe carousel jQuery plugin.</li>
+</ul>
+
+<p><strong>Note:</strong> To add new vendors resources, use <a href="http://bower.io/#install-bower">Bower</a>, and then add the appropriate resources in the <em>gulp.config.js</em> file.<br>
+The resources will be automatically added to the files <strong>js\vendors.js</strong> and <strong>css\vendors.css</strong> of the project.</p>
+
+<h3>
+<a id="extras" class="anchor" href="#extras" aria-hidden="true"><span class="octicon octicon-link"></span></a>Extras</h3>
+
+<p><strong>vhost_maker.bat</strong>: This batch script helps to add a domain in Windows HOST file, and create the corresponding virtual host in XAMPP.</p>
+
+<hr>
+
+<h2>
+<a id="install-guide" class="anchor" href="#install-guide" aria-hidden="true"><span class="octicon octicon-link"></span></a>Install guide</h2>
+
+<h3>
+<a id="xampp-and-wordpress" class="anchor" href="#xampp-and-wordpress" aria-hidden="true"><span class="octicon octicon-link"></span></a>XAMPP and Wordpress</h3>
+
+<ol>
+<li>Download and install <a href="https://www.apachefriends.org/download.html">XAMPP</a>.</li>
+<li>Donwload and extract the boilerplate files on XAMPP's <strong>\htdocs</strong> folder: ex.: C:\XAMPP\htdocs\myproject\</li>
+<li>Download and install <a href="https://wordpress.org/download/">Wordpress</a> in the boilerplate's <strong>\dev</strong> folder: ex.: C:\XAMPP\htdocs\myproject\dev\</li>
+</ol>
+
+<p><strong>Note</strong>:  See the tutorial "<a href="http://www.wikihow.com/Install-Wordpress-on-XAMPP">How to Install Wordpress on XAMPP</a>" for more detailed instructions.
+Just change the wordpress extract folder on step 2 of the tutorial, and use the boilerplate's <strong>\dev</strong> folder instead.</p>
+
+<p><strong>Tip</strong>: You can use the provided <strong>vhost_maker.bat</strong> script to automaticly add a new custom domain (ex.: dev.myproject.local) in your Windows <em>host</em> file, and matching XAMPP <em>virtual host</em> pointing to your wordpress install path.</p>
+
+<h3>
+<a id="boilerplate-requirements" class="anchor" href="#boilerplate-requirements" aria-hidden="true"><span class="octicon octicon-link"></span></a>Boilerplate requirements</h3>
+
+<ol>
+<li>Download and install the <a href="#requirements">requirements</a>. </li>
+<li>Open a <a href="https://www.youtube.com/watch?v=X3NtiEbNe-c">command line window</a> in the project root folder (where this document is located).</li>
+<li>Run the <strong>node package manager</strong> install command, to install the node modules required for the boilerplate:</li>
+</ol>
+
+<pre><code>$   npm install
+</code></pre>
+
+<ol>
+<li>Run the <strong>bower</strong> install command, to install all the vendors js and css dependencies.</li>
+</ol>
+
+<pre><code>$   bower install
+</code></pre>
+
+<ol>
+<li>All done! Run the <a href="#development-task">development task</a> to start developing.</li>
+</ol>
+
+<p>All the source theme files (styles, images, php, etc) are located on <strong>\src</strong> folder.</p>
+
+<hr>
+
+<h2>
+<a id="gulp-tasks" class="anchor" href="#gulp-tasks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Gulp Tasks</h2>
+
+<h3>
+<a id="development-task" class="anchor" href="#development-task" aria-hidden="true"><span class="octicon octicon-link"></span></a>Development Task</h3>
+
+<p>This task will compile all files from <strong>\src</strong> folder to <strong>\dev</strong> folder, and start the web server for development.</p>
+
+<pre><code>$   gulp
+</code></pre>
+
+<h3>
+<a id="components-development-task" class="anchor" href="#components-development-task" aria-hidden="true"><span class="octicon octicon-link"></span></a>Components Development Task</h3>
+
+<p>This task will compile all files from <strong>\src</strong> folder to <strong>\components</strong> folder, and start the web server for component development.</p>
+
+<pre><code>$   gulp comp
+</code></pre>
+
+<h3>
+<a id="build-task" class="anchor" href="#build-task" aria-hidden="true"><span class="octicon octicon-link"></span></a>Build Task</h3>
+
+<p>This task will compile all files from <strong>\src</strong> folder to <strong>\dist</strong> folder. Ready for distribution.</p>
+
+<pre><code>$   gulp build
+</code></pre>
+
+<hr>
+
+<h2>
+<a id="folder-structure" class="anchor" href="#folder-structure" aria-hidden="true"><span class="octicon octicon-link"></span></a>Folder structure</h2>
+
+<pre><code>+---components
++---dev
+    +---wp-content
+        +---themes
+            +---wordpress-gulp-boilerplate
++---dist
+    +---wordpress-gulp-boilerplate
++---src
+    +---fonts
+    +---images
+    +---inc
+    +---js
+    +---languages
+    +---layouts
+    +---scss
+    ¦   +---components
+    +---template-parts
+    +---vendors
+</code></pre>
+
+<ul>
+<li>
+<strong>\src</strong>: Where all project files are developed.</li>
+<li>
+<strong>\components</strong>: Where all  individual HTML components are developed.</li>
+<li>
+<strong>\dev</strong>: Where the compiled project and live develop web server runs.</li>
+<li>
+<strong>\dist</strong>: Where the static compiled project reside, after a build.</li>
+</ul>
+
+<hr>
+
+<h2>
+<a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span class="octicon octicon-link"></span></a>Requirements</h2>
+
+<ul>
+<li>
+<a href="http://git-scm.com/download/win">Git</a>: to download dependencies and some requirements.</li>
+<li>
+<a href="http://nodejs.org/dist/v0.12.4/node-v0.12.4-x86.msi">Node.js</a>: to run Gulp.</li>
+<li>
+<a href="http://dl.bintray.com/oneclick/rubyinstaller/rubyinstaller-2.2.2.exe">Ruby</a>: to run Compass.</li>
+<li>
+<a href="http://compass-style.org/install/">Compass</a> for <a href="http://dl.bintray.com/oneclick/rubyinstaller/rubyinstaller-2.2.2.exe">Ruby</a>: to compile the SCSS styles.</li>
+<li>
+<a href="https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md">Gulp</a> for <a href="http://nodejs.org/dist/v0.12.4/node-v0.12.4-x86.msi">Node.js</a>: to run the Gulp Tasks.</li>
+<li>
+<a href="http://bower.io/#install-bower">Bower</a> for <a href="http://nodejs.org/dist/v0.12.4/node-v0.12.4-x86.msi">Node.js</a>: to install dependencies.</li>
+<li>
+<a href="https://www.apachefriends.org/download.html">Xampp</a>: to run Apache, PHP, and MySQL database, and run Wordpress too.</li>
+</ul>
+
+<p><strong>Note</strong>: In some networks Node.js or bower fail to access the packages because the <em>git://</em> protocole is blocked. A workaround is to configure <strong>Git</strong> to globally use the protocol <em>https://</em> instead.<br>
+Jus open the comand line console window and run this command:</p>
+
+<pre><code>    $ git config --global url."https://".insteadOf git://
+</code></pre>
+
+<hr>
+
+<h3>
+<a id="misc" class="anchor" href="#misc" aria-hidden="true"><span class="octicon octicon-link"></span></a>Misc</h3>
+
+<p>To view this document more easily, install chrome <a href="https://chrome.google.com/webstore/detail/markdown-preview-plus/febilkbfcbhebfnokafefeacimjdckgl?utm_source=chrome-app-launcher-info-dialog">Markdown Preview Plus</a> plugin.<br>
+1. Set the extention .md to always opened in Chrome.
+2. Give the addon permission to access local files on Chrome's extension page.
+3. And setup the addon to display the markdown file using <em>"GitHub"</em> theme.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/Lukas238">Lukas238</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
