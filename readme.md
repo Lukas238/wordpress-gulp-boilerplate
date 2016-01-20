@@ -119,7 +119,7 @@ $	gulp build
 		+---languages
 		+---layouts
 		+---scss
-		¦   +---components
+		Â¦   +---components
 		+---template-parts
 		+---vendors
 
@@ -151,9 +151,10 @@ Jus open the comand line console window and run this command:
 
 ###Misc
 To view this document more easily, install chrome [Markdown Preview Plus] plugin.  
-1. Set the extention .md to always opened in Chrome.
-2. Give the addon permission to access local files on Chrome's extension page.
-3. And setup the addon to display the markdown file using _"GitHub"_ theme.
+
+1. Set the extention .md to always opened in Chrome.  
+2. Give the addon permission to access local files on Chrome's extension page.  
+3. And setup the addon to display the markdown file using _"GitHub"_ theme.  
 
 
 
