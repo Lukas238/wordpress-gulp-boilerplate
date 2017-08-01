@@ -14,14 +14,14 @@ Some of the highlights:
 
 
 
-##Technical characteristics
+## Technical characteristics
 
 - SCSS style sheets.
 - Bootstrap3 Styles.
 - Bootstrap3 official SASS (think mixins!).
 
 
-###Vendors plugins included:
+### Vendors plugins included:
 
 - [Bootstrap-3]: CSS & [JS components].
 - [Bootstrap-3-SASS]: Mixins.
@@ -35,16 +35,16 @@ Some of the highlights:
 The resources will be automatically added to the files **js\vendors.js** and **css\vendors.css** of the project.
 
 
-###Extras
+### Extras
 
 **vhost_maker.bat**: This batch script helps to add a domain in Windows HOST file, and create the corresponding virtual host in XAMPP.
 
 
 ---
 
-##Install guide 
+## Install guide 
 
-###XAMPP and Wordpress
+### XAMPP and Wordpress
 
 1. Download and install [XAMPP].
 2. Donwload and extract the boilerplate files on XAMPP's **\htdocs** folder: ex.: C:\XAMPP\htdocs\myproject\
@@ -55,7 +55,7 @@ Just change the wordpress extract folder on step 2 of the tutorial, and use the 
 
 **Tip**: You can use the provided **vhost_maker.bat** script to automaticly add a new custom domain (ex.: dev.myproject.local) in your Windows _host_ file, and matching XAMPP _virtual host_ pointing to your wordpress install path.
 
-###Boilerplate requirements
+### Boilerplate requirements
 
 1. Download and install the [requirements](#requirements). 
 2. Open a [command line window] in the project root folder (where this document is located).
@@ -78,9 +78,9 @@ All the source theme files (styles, images, php, etc) are located on **\src** fo
 
 
 
-##Gulp Tasks
+## Gulp Tasks
 
-###Development Task
+### Development Task
 This task will compile all files from **\src** folder to **\dev** folder, and start the web server for development.
 
 ```
@@ -103,7 +103,7 @@ $	gulp build
 
 ---
 
-##Folder structure
+## Folder structure
 	+---components
 	+---dev
 		+---wp-content
@@ -130,7 +130,7 @@ $	gulp build
 	
 ---	
 
-##Requirements
+## Requirements
 
 - [Git]: to download dependencies and some requirements.
 - [Node.js]: to run Gulp.
@@ -149,7 +149,7 @@ Jus open the comand line console window and run this command:
 	
 ---
 
-###Misc
+### Misc
 To view this document more easily, install chrome [Markdown Preview Plus] plugin.  
 
 1. Set the extention .md to always opened in Chrome.  
