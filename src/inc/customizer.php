@@ -1,14 +1,8 @@
 <?php
 /**
-<<<<<<< HEAD
- * wgb Theme Customizer
+ * wun Theme Customizer
  *
- * @package wgb
-=======
- * lgarcia Theme Customizer
- *
- * @package lgarcia
->>>>>>> 01876ebd690558b630978e71444aea97583c6119
+ * @package wun
  */
 
 /**
@@ -16,32 +10,46 @@
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
-<<<<<<< HEAD
-function wgb_customize_register( $wp_customize ) {
-=======
-function lgarcia_customize_register( $wp_customize ) {
->>>>>>> 01876ebd690558b630978e71444aea97583c6119
+function wun_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+
+	if ( isset( $wp_customize->selective_refresh ) ) {
+		$wp_customize->selective_refresh->add_partial( 'blogname', array(
+			'selector'        => '.site-title a',
+			'render_callback' => 'wun_customize_partial_blogname',
+		) );
+		$wp_customize->selective_refresh->add_partial( 'blogdescription', array(
+			'selector'        => '.site-description',
+			'render_callback' => 'wun_customize_partial_blogdescription',
+		) );
+	}
 }
-<<<<<<< HEAD
-add_action( 'customize_register', 'wgb_customize_register' );
-=======
-add_action( 'customize_register', 'lgarcia_customize_register' );
->>>>>>> 01876ebd690558b630978e71444aea97583c6119
+add_action( 'customize_register', 'wun_customize_register' );
+
+/**
+ * Render the site title for the selective refresh partial.
+ *
+ * @return void
+ */
+function wun_customize_partial_blogname() {
+	bloginfo( 'name' );
+}
+
+/**
+ * Render the site tagline for the selective refresh partial.
+ *
+ * @return void
+ */
+function wun_customize_partial_blogdescription() {
+	bloginfo( 'description' );
+}
 
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
-<<<<<<< HEAD
-function wgb_customize_preview_js() {
-	wp_enqueue_script( 'wgb_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20130508', true );
+function wun_customize_preview_js() {
+	wp_enqueue_script( 'wun-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20151215', true );
 }
-add_action( 'customize_preview_init', 'wgb_customize_preview_js' );
-=======
-function lgarcia_customize_preview_js() {
-	wp_enqueue_script( 'lgarcia_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20130508', true );
-}
-add_action( 'customize_preview_init', 'lgarcia_customize_preview_js' );
->>>>>>> 01876ebd690558b630978e71444aea97583c6119
+add_action( 'customize_preview_init', 'wun_customize_preview_js' );

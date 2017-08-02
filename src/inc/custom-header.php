@@ -1,184 +1,72 @@
 <?php
 /**
  * Sample implementation of the Custom Header feature
- * http://codex.wordpress.org/Custom_Headers
  *
  * You can add an optional custom header image to header.php like so ...
  *
-	<?php if ( get_header_image() ) : ?>
-	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-		<img src="<?php header_image(); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="">
-	</a>
-	<?php endif; // End header image check. ?>
+	<?php the_header_image_tag(); ?>
  *
-<<<<<<< HEAD
- * @package wgb
-=======
- * @package lgarcia
->>>>>>> 01876ebd690558b630978e71444aea97583c6119
+ * @link https://developer.wordpress.org/themes/functionality/custom-headers/
+ *
+ * @package wun
  */
 
 /**
  * Set up the WordPress core custom header feature.
  *
-<<<<<<< HEAD
- * @uses wgb_header_style()
- * @uses wgb_admin_header_style()
- * @uses wgb_admin_header_image()
+ * @uses wun_header_style()
  */
-function wgb_custom_header_setup() {
-	add_theme_support( 'custom-header', apply_filters( 'wgb_custom_header_args', array(
-=======
- * @uses lgarcia_header_style()
- * @uses lgarcia_admin_header_style()
- * @uses lgarcia_admin_header_image()
- */
-function lgarcia_custom_header_setup() {
-	add_theme_support( 'custom-header', apply_filters( 'lgarcia_custom_header_args', array(
->>>>>>> 01876ebd690558b630978e71444aea97583c6119
+function wun_custom_header_setup() {
+	add_theme_support( 'custom-header', apply_filters( 'wun_custom_header_args', array(
 		'default-image'          => '',
 		'default-text-color'     => '000000',
 		'width'                  => 1000,
 		'height'                 => 250,
 		'flex-height'            => true,
-<<<<<<< HEAD
-		'wp-head-callback'       => 'wgb_header_style',
-		'admin-head-callback'    => 'wgb_admin_header_style',
-		'admin-preview-callback' => 'wgb_admin_header_image',
+		'wp-head-callback'       => 'wun_header_style',
 	) ) );
 }
-add_action( 'after_setup_theme', 'wgb_custom_header_setup' );
+add_action( 'after_setup_theme', 'wun_custom_header_setup' );
 
-if ( ! function_exists( 'wgb_header_style' ) ) :
-/**
- * Styles the header image and text displayed on the blog
- *
- * @see wgb_custom_header_setup().
- */
-function wgb_header_style() {
-=======
-		'wp-head-callback'       => 'lgarcia_header_style',
-		'admin-head-callback'    => 'lgarcia_admin_header_style',
-		'admin-preview-callback' => 'lgarcia_admin_header_image',
-	) ) );
-}
-add_action( 'after_setup_theme', 'lgarcia_custom_header_setup' );
+if ( ! function_exists( 'wun_header_style' ) ) :
+	/**
+	 * Styles the header image and text displayed on the blog.
+	 *
+	 * @see wun_custom_header_setup().
+	 */
+	function wun_header_style() {
+		$header_text_color = get_header_textcolor();
 
-if ( ! function_exists( 'lgarcia_header_style' ) ) :
-/**
- * Styles the header image and text displayed on the blog
- *
- * @see lgarcia_custom_header_setup().
- */
-function lgarcia_header_style() {
->>>>>>> 01876ebd690558b630978e71444aea97583c6119
-	$header_text_color = get_header_textcolor();
+		/*
+		 * If no custom options for text are set, let's bail.
+		 * get_header_textcolor() options: Any hex value, 'blank' to hide text. Default: add_theme_support( 'custom-header' ).
+		 */
+		if ( get_theme_support( 'custom-header', 'default-text-color' ) === $header_text_color ) {
+			return;
+		}
 
-	// If no custom options for text are set, let's bail
-	// get_header_textcolor() options: HEADER_TEXTCOLOR is default, hide text (returns 'blank') or any hex value.
-	if ( HEADER_TEXTCOLOR == $header_text_color ) {
-		return;
-	}
-
-	// If we get this far, we have custom styles. Let's do this.
-	?>
-	<style type="text/css">
-	<?php
+		// If we get this far, we have custom styles. Let's do this.
+		?>
+		<style type="text/css">
+		<?php
 		// Has the text been hidden?
-		if ( 'blank' == $header_text_color ) :
-	?>
-		.site-title,
-		.site-description {
-			position: absolute;
-			clip: rect(1px, 1px, 1px, 1px);
-		}
-	<?php
-		// If the user has set a custom color for the text use that.
-		else :
-	?>
-		.site-title a,
-		.site-description {
-			color: #<?php echo esc_attr( $header_text_color ); ?>;
-		}
-	<?php endif; ?>
-	</style>
-	<?php
-}
-<<<<<<< HEAD
-endif; // wgb_header_style
-
-if ( ! function_exists( 'wgb_admin_header_style' ) ) :
-/**
- * Styles the header image displayed on the Appearance > Header admin panel.
- *
- * @see wgb_custom_header_setup().
- */
-function wgb_admin_header_style() {
-=======
-endif; // lgarcia_header_style
-
-if ( ! function_exists( 'lgarcia_admin_header_style' ) ) :
-/**
- * Styles the header image displayed on the Appearance > Header admin panel.
- *
- * @see lgarcia_custom_header_setup().
- */
-function lgarcia_admin_header_style() {
->>>>>>> 01876ebd690558b630978e71444aea97583c6119
-?>
-	<style type="text/css">
-		.appearance_page_custom-header #headimg {
-			border: none;
-		}
-		#headimg h1,
-		#desc {
-		}
-		#headimg h1 {
-		}
-		#headimg h1 a {
-		}
-		#desc {
-		}
-		#headimg img {
-		}
-	</style>
-<?php
-}
-<<<<<<< HEAD
-endif; // wgb_admin_header_style
-
-if ( ! function_exists( 'wgb_admin_header_image' ) ) :
-/**
- * Custom header image markup displayed on the Appearance > Header admin panel.
- *
- * @see wgb_custom_header_setup().
- */
-function wgb_admin_header_image() {
-=======
-endif; // lgarcia_admin_header_style
-
-if ( ! function_exists( 'lgarcia_admin_header_image' ) ) :
-/**
- * Custom header image markup displayed on the Appearance > Header admin panel.
- *
- * @see lgarcia_custom_header_setup().
- */
-function lgarcia_admin_header_image() {
->>>>>>> 01876ebd690558b630978e71444aea97583c6119
-?>
-	<div id="headimg">
-		<h1 class="displaying-header-text">
-			<a id="name" style="<?php echo esc_attr( 'color: #' . get_header_textcolor() ); ?>" onclick="return false;" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
-		</h1>
-		<div class="displaying-header-text" id="desc" style="<?php echo esc_attr( 'color: #' . get_header_textcolor() ); ?>"><?php bloginfo( 'description' ); ?></div>
-		<?php if ( get_header_image() ) : ?>
-		<img src="<?php header_image(); ?>" alt="">
+		if ( ! display_header_text() ) :
+		?>
+			.site-title,
+			.site-description {
+				position: absolute;
+				clip: rect(1px, 1px, 1px, 1px);
+			}
+		<?php
+			// If the user has set a custom color for the text use that.
+			else :
+		?>
+			.site-title a,
+			.site-description {
+				color: #<?php echo esc_attr( $header_text_color ); ?>;
+			}
 		<?php endif; ?>
-	</div>
-<?php
-}
-<<<<<<< HEAD
-endif; // wgb_admin_header_image
-=======
-endif; // lgarcia_admin_header_image
->>>>>>> 01876ebd690558b630978e71444aea97583c6119
+		</style>
+		<?php
+	}
+endif;
