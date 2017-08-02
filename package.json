@@ -1,17 +1,18 @@
 {
-  "name": "html5-boilerplate-compass",
-  "title": "Boilerplate for web site with gulp and gulp-compass.",
-  "version": "1.0.0",
+  "name": "wordpress-gulp-boilerplate",
+  "title": "Boilerplate for web site with gulp and gulp-sass.",
+  "version": "1.2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Lukas238/html5-boilerplate-compass.git"
+    "url": "https://github.com/Lukas238/wordpress-gulp-boilerplate"
   },
   "author": "Lucas Dasso <dasso.lucas@c238.com.ar>",
   "keywords": [
     "c238",
-    "compass",
     "scss",
     "gulp",
+    "bootstrap3",
+    "wordpress",
     "boilerplate"
   ],
   "main": "gulpfile.js",

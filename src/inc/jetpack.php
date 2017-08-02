@@ -4,7 +4,7 @@
  *
  * @link https://jetpack.com/
  *
- * @package wun
+ * @package wpgb
  */
 
 /**
@@ -14,11 +14,11 @@
  * See: https://jetpack.com/support/responsive-videos/
  * See: https://jetpack.com/support/content-options/
  */
-function wun_jetpack_setup() {
+function wpgb_jetpack_setup() {
 	// Add theme support for Infinite Scroll.
 	add_theme_support( 'infinite-scroll', array(
 		'container' => 'main',
-		'render'    => 'wun_infinite_scroll_render',
+		'render'    => 'wpgb_infinite_scroll_render',
 		'footer'    => 'page',
 	) );
 
@@ -28,7 +28,7 @@ function wun_jetpack_setup() {
 	// Add theme support for Content Options.
 	add_theme_support( 'jetpack-content-options', array(
 		'post-details' => array(
-			'stylesheet' => 'wun-style',
+			'stylesheet' => 'wpgb-style',
 			'date'       => '.posted-on',
 			'categories' => '.cat-links',
 			'tags'       => '.tags-links',
@@ -37,12 +37,12 @@ function wun_jetpack_setup() {
 		),
 	) );
 }
-add_action( 'after_setup_theme', 'wun_jetpack_setup' );
+add_action( 'after_setup_theme', 'wpgb_jetpack_setup' );
 
 /**
  * Custom render function for Infinite Scroll.
  */
-function wun_infinite_scroll_render() {
+function wpgb_infinite_scroll_render() {
 	while ( have_posts() ) {
 		the_post();
 		if ( is_search() ) :
