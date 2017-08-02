@@ -9,26 +9,26 @@ var config = require('./gulp.config')();
 
 /*	PLUGINS
 *********************/
-var gulp        		= require('gulp'),
-	plumber     	= require('gulp-plumber'),
-	notify      		= require('gulp-notify'),
-	run         		= require('run-sequence'),
-	compass     	= require('gulp-compass'),
-	autoprefixer	= require('gulp-autoprefixer'),
-	rename      	= require('gulp-rename'),
-	minifyCSS   	= require('gulp-minify-css'),
-	concat      	= require('gulp-concat'),
-	changed     	= require('gulp-changed'),
+var gulp        = require('gulp'),
+	plumber     = require('gulp-plumber'),
+	notify      = require('gulp-notify'),
+	run         = require('run-sequence'),
+	sass 		= require('gulp-sass'),
+	autoprefixer= require('gulp-autoprefixer'),
+	rename      = require('gulp-rename'),
+	minifyCSS   = require('gulp-minify-css'),
+	concat      = require('gulp-concat'),
+	changed     = require('gulp-changed'),
 	browserSync = require('browser-sync').create(),
-	uglify      		= require('gulp-uglify'),
-	imagemin    	= require('gulp-imagemin'),
-	jshint      		= require('gulp-jshint'),
-	fs          		= require('fs'),
-	path        		= require('path'),
-	glob        		= require('glob'),
-	merge       	= require('merge-stream'),
-	del         		= require('del'),
-	package     	= require('./package.json'); 
+	uglify      = require('gulp-uglify'),
+	imagemin    = require('gulp-imagemin'),
+	jshint      = require('gulp-jshint'),
+	fs          = require('fs'),
+	path        = require('path'),
+	glob        = require('glob'),
+	merge       = require('merge-stream'),
+	del         = require('del'),
+	package     = require('./package.json'); 
 	
 
 /*	ERROR HANDLING
@@ -121,14 +121,10 @@ gulp.task('sass-includes', function (callback) {
 gulp.task('scss', ['sass-includes'], function () {
 	
 	return gulp.src(config.paths.src_scss+'/styles.scss')
-	.pipe(compass({
-		project: __dirname,
-		logging: false,
-		sourcemap: false,
-		import_path: config.paths.sass_includes,
-		sass: config.paths.src_scss,
-		css: config.wf+config.paths.dest_css
-    }))
+	.pipe(sass({
+		includePaths: config.paths.sass_includes,
+		errLogToConsole: true
+	}))
 	.pipe(autoprefixer('last 4 version'))
 	.pipe(gulp.dest( config.wf + config.paths.dest_css ))
 	/*
