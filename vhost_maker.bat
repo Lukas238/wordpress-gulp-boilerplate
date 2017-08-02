@@ -157,7 +157,7 @@ ECHO [1/2] Adding virtualhost to httpd.conf
 	ECHO:
 	ECHO:
 	ECHO    ###%vhostname%###
-	ECHO    ^<VirtualHost *^>
+	ECHO    ^<VirtualHost *:80^>
 	ECHO        DocumentRoot "%BASEURL%%vhostpath%"
 	ECHO        ServerName %PREFIX%.%vhostname%.%SUFFIX%
 	ECHO        ^<Directory "%BASEURL%%vhostpath%"^>
