@@ -25,15 +25,6 @@ The aim of this boilerplate, is to facilitate the development of templates for W
 The resources will be automatically added to the files **js\vendors.js** and **css\vendors.css** of the project.
 
 
-## Requirements
-
-- [Git]: to download dependencies and some requirements.
-- [Node.js]: to run Gulp.
-- [Gulp] for [Node.js]: to run the Gulp Tasks.
-- [Bower] for [Node.js]: to install dependencies.
-- [XAMPP]: to run Apache, PHP, and MySQL database, and run Wordpress too.
-
-
 ## Installation
 
 1. Download and install [XAMPP].
@@ -123,9 +114,10 @@ gulp build
 	
 ---	
 
+
 ## Requirements
 
-- [Xampp]: to run Apache, PHP, and MySQL database, and run Wordpress too.
+- [XAMPP]: to run Apache, PHP, and MySQL database, and run Wordpress too.
 - [Node.js]: to run Gulp.
 - [Gulp] for [Node.js]: to run the Gulp Tasks.
 - [Bower] for [Node.js]: to install dependencies.
