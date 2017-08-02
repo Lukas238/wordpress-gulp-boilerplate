@@ -145,7 +145,6 @@ npm install --global --production windows-build-tools
 >**NOTE**: Both installations are conflict-free, meaning that they do not mess with existing installations of Visual Studio, C++ Build Tools, or Python.
 
 2. Add the new python install folder to the Windows Path variable.
-
 ```
 set PATH=%PATH%;%USERPROFILE%\.windows-build-tools\python27
 ```
