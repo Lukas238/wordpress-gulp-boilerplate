@@ -49,18 +49,18 @@ md wpgboilerplate
 6. Start XAMPP web server.
 7. Start XAMPP mySQL server.
 8. In the browser navigate to http://localhost/phpmyadmin and create a new **wpgboilerplate_db** data base ( _utf8_general_ci_ collation). 
-	- Set the database name to **wpgboilerplate_db**.
-	- Set the database user to **root** (XAMPP default) and leave the password empty (XAMPP default).
-	- Complete the rest of the fields as you prefer.
-9. Install Node.js dependencies:  ```npm install```.
-10. Install Bower dependencies:  ```npm bower```.
-11. Use ```var theme_name = 'wbgboilerplate';``` in **gulp.config.js** file to set an unique name for your wordpress theme.  
-12. Start the gulp/php developer webserver.
+9.	Make sure you have the  packets **gulp** and **bower** installed as global: ```npm -g gulp bower```.
+10. Install Node.js dependencies:  ```npm install```.
+11. Install Bower dependencies:  ```bower install```.
+12. Use ```var theme_name = 'wbgboilerplate';``` in **gulp.config.js** file to set an unique name for your wordpress theme.  
+13. Start the gulp/php developer webserver.
 ```
 gulp
 ```
 13. In the browser navigate to http://dev.wpgbolierplate.local/ to start the Wordpress installation.
-
+	- Set the database name to **wpgboilerplate_db**.
+	- Set the database user to **root** (XAMPP default) and leave the password empty (XAMPP default).
+	- Complete the rest of the fields as you prefer.
 
 ## Gulp Tasks
 
