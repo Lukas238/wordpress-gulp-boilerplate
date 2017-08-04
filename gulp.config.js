@@ -1,20 +1,22 @@
 module.exports = function () {  
 	
 	var theme_name = 'wordpress-gulp-boilerplate'; //Wordpress theme name
-    
+	var site_url = 'dev.wpgboilerplate.local';
+	
 	var config = {
-		src:	'src', //Sources
+		src:	'./src', //Sources
 		dev:	'dev/wp-content/themes/' + theme_name,	//Develop
 		dist:	'dist/' + theme_name,	//Distribution
 		comp:	'components',	//Components develop
-		directory_listing: false
+		directory_listing: false,
+		domain: site_url
 	};
 	
 	config.wf = config.dev; //Default Working Folder
 
 	config.paths = {
 		src_css: 			config.src + '/css',
-		src_scss: 			config.src + '/scss',
+		src_scss: 			config.src + '/sass',
 		src_js: 				config.src + '/js',
 		src_img:			config.src + '/images',
 		src_fonts:			config.src + '/fonts',
@@ -27,7 +29,7 @@ module.exports = function () {
 	};
 	
 	config.paths.sass_includes = [ 
-		config.paths.src_vendors + '/bootstrap-sass/assets/stylesheets/'
+		config.paths.src_vendors + '/bootstrap-sass/assets/stylesheets'
 	];
 	
 	config.files = {

@@ -13,7 +13,8 @@ var gulp        = require('gulp'),
 	plumber     = require('gulp-plumber'),
 	notify      = require('gulp-notify'),
 	run         = require('run-sequence'),
-	sass 		= require('gulp-sass'),
+	sassGlob    = require('gulp-sass-glob'),
+	sass        = require('gulp-sass'),
 	autoprefixer= require('gulp-autoprefixer'),
 	rename      = require('gulp-rename'),
 	minifyCSS   = require('gulp-minify-css'),
@@ -84,49 +85,18 @@ gulp.task('php', function () {
 });
 
 
-//	SASS-INCLUDE
-//	Import all the componentes files into the file _all.scss.
-gulp.task('sass-includes', function (callback) {
-	var all = '_all.scss';
-	fs.writeFile(config.paths.src_scss+'/components/'+all , '/** This is a dynamically generated file **/\n\n', { overwrite: true }, function (err) {		
-			glob(config.src+'/scss/**/' + all, function (error, files) {
-				files.forEach(function (allFile) {
-					var directory = path.dirname(allFile);
-					var partials = fs.readdirSync(directory).filter(function (file) {
-						return (
-							// Exclude the dynamically generated file
-							file !== all &&
-							// Only include _*.scss files
-							path.basename(file).substring(0, 1) === '_' &&
-							path.extname(file) === '.scss'
-						);
-					});
-					// Append import statements for each partial
-					partials.forEach(function (partial) {
-						fs.appendFileSync(allFile, '@import "' + partial + '";\n');
-					});
-				});
-			});
-	});
-	callback();
-	
-	//To run this function just one time
-	gulp.task('sass-includes', function (callback) {
-		callback();
-	})
-	
-});
-
 //	SCSS
-gulp.task('scss', ['sass-includes'], function () {
+gulp.task('scss', function () {
 	
-	return gulp.src(config.paths.src_scss+'/styles.scss')
+	return gulp.src(config.paths.src_scss+'/style.scss')
+	.pipe(sassGlob())
 	.pipe(sass({
 		includePaths: config.paths.sass_includes,
 		errLogToConsole: true
 	}))
 	.pipe(autoprefixer('last 4 version'))
-	.pipe(gulp.dest( config.wf + config.paths.dest_css ))
+	.pipe(gulp.dest( config.wf ))
+	.pipe(browserSync.stream());
 	/*
 	.pipe(minifyCSS({
 		keepSpecialComments: 1,
@@ -135,7 +105,7 @@ gulp.task('scss', ['sass-includes'], function () {
 	.pipe(rename({ suffix: '.min' }))
 	.pipe(gulp.dest( config.wf + config.paths.dest_css ))
 	*/
-	.pipe(browserSync.reload({stream:true}));
+	//.pipe(browserSync.reload({stream:true}));
 	
 });
 
@@ -245,11 +215,9 @@ gulp.task('browser-sync', function() {
 });
 
 gulp.task('browser-sync-wp', function() {
- 
     //initialize browsersync
     browserSync.init(null, {
-		proxy: "http://dev.lgarcia.local/",
-		notify: false
+		proxy: config.domain
     });
 });
 
@@ -271,7 +239,7 @@ gulp.task('default', ['clean:dev'], function(){
 	
 	run(['php', 'scss', 'js', 'images', 'fonts', 'vendors', 'standalone', 'browser-sync-wp'], function(){		
 		gulp.watch(config.src+'/**/*.php', ['php']);
-		gulp.watch(config.src+'/scss/**/*.scss', ['scss']);
+		gulp.watch(config.src+'/sass/**/*.scss', ['scss']);
 		gulp.watch(config.src+'/js/**/*.js', ['js']);
 		gulp.watch(config.src+'/images/**/*', ['images']);
 	});
@@ -286,7 +254,7 @@ gulp.task('comp', ['clean:comp'], function () {
 	
 	run(['scss', 'js', 'images', 'fonts', 'vendors', 'standalone', 'browser-sync'], function () {
 		gulp.watch(config.wf + '/**/*.html', ['html']);
-		gulp.watch(config.src + '/scss/**/*.scss', ['scss']);
+		gulp.watch(config.src + '/sass/**/*.scss', ['scss']);
 		gulp.watch(config.src + '/js/**/*.js', ['js']);
 		gulp.watch(config.src + '/images/**/*', ['images']);
 	});	
