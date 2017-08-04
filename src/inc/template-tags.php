@@ -4,7 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package wpgb
+ * @package WordpressGulpBoilerplate
  */
 
 if ( ! function_exists( 'wpgb_posted_on' ) ) :

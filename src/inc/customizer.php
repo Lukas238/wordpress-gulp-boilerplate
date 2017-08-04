@@ -1,8 +1,8 @@
 <?php
 /**
- * wpgb Theme Customizer
+ * WordpressGulpBoilerplate Theme Customizer
  *
- * @package wpgb
+ * @package WordpressGulpBoilerplate
  */
 
 /**

@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Creating_an_Error_404_Page
  *
- * @package wpgb
+ * @package WordpressGulpBoilerplate
  */
 
 get_header(); ?>
